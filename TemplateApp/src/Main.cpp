@@ -2,9 +2,8 @@
 
 #include <thread>
 
-int __stdcall wWinMain(HINSTANCE instance, HINSTANCE previousInstance, PWSTR arguments, int commandShow) {
+int wWinMain(HINSTANCE instance, HINSTANCE previousInstance, PWSTR arguments, int commandShow) {
 
-	// create gui
 	gui::CreateHWindow("Menu", "Menu Class");
 	gui::CreateDevice();
 	gui::CreateImGui();

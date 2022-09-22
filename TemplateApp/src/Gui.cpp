@@ -1,8 +1,8 @@
 #include "gui.h"
 
-#include "../imgui/imgui.h"
-#include "../imgui/imgui_impl_dx9.h"
-#include "../imgui/imgui_impl_win32.h"
+#include "imgui.h"
+#include "imgui_impl_dx9.h"
+#include "imgui_impl_win32.h"
 
 #include <string>
 
@@ -53,13 +53,13 @@ long __stdcall WindowProcess(HWND window, UINT message, WPARAM wideParameter, LP
 	}
 	}
 
-	return DefWindowProcW(window, message, wideParameter, longParameter);
+	return (long)DefWindowProcW(window, message, wideParameter, longParameter);
 }
 
 void gui::CreateHWindow(const char* windowName, const char* className) noexcept {
 	windowClass.cbSize = sizeof(WNDCLASSEXA);
 	windowClass.style = CS_CLASSDC;
-	windowClass.lpfnWndProc = WindowProcess; // setting window process to our window proc function
+	windowClass.lpfnWndProc = (WNDPROC)WindowProcess; // setting window process to our window proc function
 	windowClass.cbClsExtra = 0;
 	windowClass.cbWndExtra = 0;
 	windowClass.hInstance = GetModuleHandleA(0);

@@ -1,6 +1,8 @@
+# Binaries
+/bin/
+/bin-int/
+
+# Visual Studio
 .vs/
-*.dll
-*.lib
-*.exe
 *.sln
 *.vcxproj*
