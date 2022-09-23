@@ -5,8 +5,8 @@ workspace "ImGuiAppTemplate"
 
 	configurations { "Debug", "Release", }
 
-group "Core"
-	include "TemplateApp/vendor/ImGui"
+group "Dependencies"
+	include "TemplateApp/vendor/imgui"
 group ""
 
 include "TemplateApp"
